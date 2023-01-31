@@ -1,0 +1,4 @@
+01/01/2022,Real Madrid,Barcelona,89,78
+02/01/2022,Valencia Basket,Baskonia,75,71
+03/01/2022,Unicaja Malaga,Zaragoza,66,72
+04/01/2022,Gran Canaria,Tenerife,68,64
