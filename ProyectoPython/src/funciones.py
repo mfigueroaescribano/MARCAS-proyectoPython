@@ -34,7 +34,12 @@ def eliminaPartido(listaPartidos):
 
 # LISTA DE EQUIPOS
 def listaEquipos(listaPartidos):
-    pass
+    listaEquipos = []
+    for partido in listaPartidos:
+        listaEquipos.append(partido["equipoLocal"])
+        listaEquipos.append(partido["equipoVisitante"])
+    print(listaEquipos)
+    
 
 def estadisticaEquipo(listaPartidos):
     listaEquipos = []
