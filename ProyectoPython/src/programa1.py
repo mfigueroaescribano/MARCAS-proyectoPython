@@ -32,6 +32,9 @@ while opcion !=7:
     elif opcion==4:
         listaEquipos(listaPartidos)
 
+    elif opcion==5:
+        estadisticaEquipo(listaPartidos)
+
     elif opcion==6:
         print(listaPartidos)
 

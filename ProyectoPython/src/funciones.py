@@ -36,13 +36,32 @@ def eliminaPartido(listaPartidos):
 def listaEquipos(listaPartidos):
     listaEquipos = []
     for partido in listaPartidos:
-        listaEquipos.append(partido["equipoLocal"])
-        listaEquipos.append(partido["equipoVisitante"])
+        if partido["equipoLocal"] not in listaEquipos:
+            listaEquipos.append(partido["equipoLocal"])
+        if partido["equipoVisitante"] not in listaEquipos:
+            listaEquipos.append(partido["equipoVisitante"])
     print(listaEquipos)
     
 
 def estadisticaEquipo(listaPartidos):
-    listaEquipos = []
     equipo = input("Introduzca el nombre del equipo: ")
+    puntosEquipo = 0
+    partidosGanados = 0
+    partidosPerdidos = 0
+    # No puede haber empate
     for partido in listaPartidos:
-        partido()
+        if partido["equipoLocal"] == equipo:
+            puntosEquipo += partido["resultadoLocal"]
+            if partido["resultadoLocal"] > partido["resultadoVisitante"]:
+                partidosGanados =+ 1
+            else:
+                partidosPerdidos =+ 1
+        if partido["equipoVisitante"] == equipo:
+            puntosEquipo += partido["resultadoVisitante"]
+            if partido["resultadoLocal"] > partido["resultadoVisitante"]:
+                partidosPerdidos =+ 1
+            else:
+                partidosGanados =+ 1
+    print(f"{equipo} ha anotado {puntosEquipo} puntos")
+    print(f"{equipo} ha ganado {partidosGanados} partidos")
+    print(f"{equipo} ha perdido {partidosPerdidos} partidos")
